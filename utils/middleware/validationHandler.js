@@ -2,8 +2,9 @@ const boom = require('@hapi/boom')
 const joi = require('@hapi/joi')
 
 function validate(data, schema) {
-	//const { error } = joi.validata(data, schema)
-	const { error } = joi.object(schema).validate(data)
+	//const { error } = joi.validate(data, schema)
+	//const { error } = joi.object(schema).validate(data)
+	const { error } = schema.validate(data, { errors: { stack: true } })
 	return error
 }
 

@@ -1,5 +1,6 @@
 const express = require('express')
 const MoviesService = require('../services/movies')
+const joi = require('@hapi/joi')
 
 const {
     movieIdSchema,
@@ -29,10 +30,10 @@ function moviesApi(app) {
         }
     });
 
-    router.get('/:IdMovie', validationHandler({ IdMovie:movieIdSchema }, 'params'), async (req, res, next) => {
-        const { IdMovie } = req.params;
+    router.get('/:movieId', validationHandler(joi.object({ movieId: movieIdSchema }), 'params'), async (req, res, next) => {
+        const { movieId } = req.params;
         try {
-            const movies = await moviesService.getMovie({ IdMovie })
+            const movies = await moviesService.getMovie({ movieId })
             res.status(200).json({
                 data: movies,
                 message: "movies find"
@@ -43,7 +44,7 @@ function moviesApi(app) {
         }
     });
 
-    router.post('/', validationHandler(createMovieSchema), async (req, res, next) => {
+    router.post('/', validationHandler(joi.object(updateMovieSchema)), async (req, res, next) => {
         const { body: movie } = req;
         try {
             const createdMovie = await moviesService.createMovie({ movie });
@@ -57,11 +58,11 @@ function moviesApi(app) {
         }
     });
 
-    router.put('/:IdMovie', validationHandler({ IdMovie:movieIdSchema }, 'params'), validationHandler(updateMovieSchema), async (req, res, next) => {
-        const { IdMovie } = req.params;
+    router.put('/:movieId', validationHandler(joi.object({ movieId: movieIdSchema }), 'params'), validationHandler(joi.object(updateMovieSchema)), async (req, res, next) => {
+        const { movieId } = req.params;
         const { body: movie } = req;
         try {
-            const updatedMovie = await moviesService.updateMovie({ IdMovie, movie })
+            const updatedMovie = await moviesService.updateMovie({ movieId, movie })
             res.status(200).json({
                 data: updatedMovie,
                 message: "movie updated"
@@ -72,11 +73,11 @@ function moviesApi(app) {
         }
     });
 
-    router.delete('/:IdMovie', validationHandler({ IdMovie:movieIdSchema }, 'params'), async (req, res, next) => {
-        const { IdMovie } = req.params;
+    router.delete('/:movieId', validationHandler(joi.object({ movieId: movieIdSchema }), 'params'), async (req, res, next) => {
+        const { movieId } = req.params;
         try {
-            console.log(IdMovie);
-            const deleteMovie = await moviesService.deleteMovie({ IdMovie })
+            console.log(movieId);
+            const deleteMovie = await moviesService.deleteMovie({ movieId })
             res.status(200).json({
                 data: deleteMovie,
                 message: "movie deleted"

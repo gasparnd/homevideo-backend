@@ -11,7 +11,7 @@ const movieDescriptioSchema = joi.string().max(300)
 const movieDurationSchema = joi
 	.number()
 	.min(1)
-	.max(300)
+	.max(3000)
 const moviecontentRatingSchema = joi.string().max(5)
 const movieSourceSchema = joi.string().uri()
 const movieTagsSchema = joi.array().items(joi.string().max(50))
