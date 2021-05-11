@@ -16,9 +16,14 @@
   "dependencies": {
     "@hapi/boom": "^9.1.2",
     "@hapi/joi": "^17.1.1",
+    "bcrypt": "^5.0.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mongodb": "^3.6.6"
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.6.6",
+    "passport": "^0.4.1",
+    "passport-http": "^0.3.0",
+    "passport-jwt": "^4.0.0"
   },
   "husky": {
     "hooks": {
@@ -26,6 +31,7 @@
     }
   },
   "devDependencies": {
+    "chalk": "^4.1.1",
     "eslint": "^7.24.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^3.3.1",
