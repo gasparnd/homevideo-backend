@@ -2,7 +2,7 @@ const MongoLib = require('../lib/mongo')
 const bcrypt = require('bcrypt')
 
 
-class UserService {
+class UsersService {
 	constructor() {
 		this.collection = 'user'
 		this.mongoDB = new MongoLib()
@@ -27,4 +27,4 @@ class UserService {
 	}
 }
 
-module.exports = UserService
+module.exports = UsersService
