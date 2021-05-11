@@ -22,9 +22,10 @@ const moviesMock = [
     "contentRating": "PG-13",
     "source": "http://census.gov/volutpat.jsp",
     "tags": [
-    "Horror",
-    "Documentary",
-    "Drama|Romance"
+        "Horror",
+        "Documentary",
+        "Drama",
+        "Romance"
     ]
   },
   {
@@ -37,7 +38,8 @@ const moviesMock = [
     "contentRating": "PG",
     "source": "http://auda.org.au/sapien/sapien/non/mi.png",
     "tags": [
-    "Comedy|Drama"
+        "Comedy",
+        "Drama"
     ]
   },
   {
@@ -50,7 +52,7 @@ const moviesMock = [
     "contentRating": "R",
     "source": "http://prnewswire.com/aliquam/erat.html",
     "tags": [
-    "Thriller"
+        "Thriller"
     ]
   },
   {
@@ -61,10 +63,18 @@ const moviesMock = [
     "description": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
     "duration": 1953,
     "contentRating": "G",
-    "source": "https://fda.gov/non/velit/nec/nisi/vulputate/nonummy/maecenas.xml",
+    "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
     "tags": [
-    "Crime|Drama|Fantasy|Film-Noir|Mystery|Romance",
-    "Action|Comedy|Crime|Drama"
+        "Crime",
+        "Drama",
+        "Fantasy",
+        "Film-Noir",
+        "Mystery",
+        "Romance",
+        "Action",
+        "Comedy",
+        "Crime",
+        "Drama"
     ]
   },
   {
@@ -75,13 +85,18 @@ const moviesMock = [
     "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.",
     "duration": 1912,
     "contentRating": "NC-17",
-    "source": "https://1688.com/varius/ut.html",
+    "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
     "tags": [
-    "Drama|Film-Noir",
-    "Comedy|Romance",
-    "Action|Sci-Fi",
-    "Comedy|Drama",
-    "Comedy|Drama|Romance"
+        "Crime",
+        "Drama",
+        "Fantasy",
+        "Film-Noir",
+        "Mystery",
+        "Romance",
+        "Action",
+        "Comedy",
+        "Crime",
+        "Drama"
     ]
   },
   {
@@ -92,11 +107,18 @@ const moviesMock = [
     "description": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
     "duration": 1968,
     "contentRating": "NC-17",
-    "source": "http://amazonaws.com/augue/aliquam/erat/volutpat/in/congue/etiam.png",
+    "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
     "tags": [
-    "Action|Thriller",
-    "Action|Adventure",
-    "Drama|Romance|Sci-Fi"
+        "Crime",
+        "Drama",
+        "Fantasy",
+        "Film-Noir",
+        "Mystery",
+        "Romance",
+        "Action",
+        "Comedy",
+        "Crime",
+        "Drama"
     ]
   },
   {
@@ -107,9 +129,13 @@ const moviesMock = [
     "description": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
     "duration": 2039,
     "contentRating": "PG",
-    "source": "http://nhs.uk/maecenas/leo/odio/condimentum.jsp",
+    "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
     "tags": [
-    "Adventure|Animation|Children|Drama|Fantasy"
+        "Adventure",
+        "Animation",
+        "Children",
+        "Drama",
+        "Fantasy"
     ]
   },
   {
@@ -120,9 +146,12 @@ const moviesMock = [
     "description": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
     "duration": 1935,
     "contentRating": "G",
-    "source": "https://nba.com/sit.png",
+    "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
     "tags": [
-    "Crime|Drama|Mystery|Thriller"
+        "Crime",
+        "Drama",
+        "Mystery",
+        "Thriller"
     ]
   },
   {
@@ -133,9 +162,11 @@ const moviesMock = [
     "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
     "duration": 1901,
     "contentRating": "PG-13",
-    "source": "http://google.cn/at/turpis/donec/posuere/metus/vitae/ipsum.jsp",
+    "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
     "tags": [
-    "Action|Adventure|Drama"
+        "Action",
+        "Adventure",
+        "Drama"
     ]
   }
 ]
