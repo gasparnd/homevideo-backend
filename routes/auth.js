@@ -1,6 +1,6 @@
 const express = require('express')
 const passport = require('passport')
-const boom = require('@happi/boom')
+const boom = require('@hapi/boom')
 const jwt = require('jsonwebtoken')
 const ApiKeysService = require('../services/apiKeys')
 
@@ -22,13 +22,13 @@ const authApi = app => {
 			next(boom.unauthorized('apiKeyToken is required'))
 		}
 
-		passport.uthenticate('basic', (error, user) => {
+		passport.authenticate('basic', (err, user) => {
 			try{
-				if(error || !user) {
-					next(boom.unauthorized())
+				if(err || !user) {
+					next(boom.unauthorized(), false)
 				}
 
-				req.login(user, { session: false }, async error => {
+				req.login(user, { session: false }, async (error) => {
 					if(error) {
 						next(error)
 					}
@@ -39,7 +39,11 @@ const authApi = app => {
 						next(boom.unauthorized())
 					}
 
-					const { _id: id, name, email } = user
+					const { 
+						_id: id, 
+						name, 
+						email 
+					} = user
 
 					const payload = {
 						sub: id, 
