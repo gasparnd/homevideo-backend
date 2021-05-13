@@ -3,8 +3,8 @@ const joi = require('@hapi/joi')
 
 function validate(data, schema) {
 	//const { error } = joi.validate(data, schema)
-	//const { error } = joi.object(schema).validate(data)
-	const { error } = schema.validate(data, { errors: { stack: true } })
+	const { error } = joi.object(schema).validate(data)
+	//const { error } = schema.validate(data, { errors: { stack: true } })
 	return error
 }
 
