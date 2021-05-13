@@ -6,11 +6,11 @@ const bcrypt = require('bcrypt')
 const UsersService = require('../../../services/users')
 
 passport.use(new BasicStrategy(async (email, password, cb) => {
-	const userService = new UsersService()
+	const userService = new UsersService();
 
 	try {
-		const user = await userService.getUser({ email })
-
+		const user = await userService.getUser({ email });
+		
 		if(!user) {
 			return cb(boom.unauthorized(), false) 
 		}
