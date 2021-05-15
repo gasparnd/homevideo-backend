@@ -1,26 +1,24 @@
 const moviesMock = [
   {
-    "id": "94156f00-db7d-42e3-b5eb-f26e256fcae1",
     "title": "CQ",
     "year": 2001,
     "cover": "http://dummyimage.com/130x249.png/ff4444/ffffff",
     "description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
     "duration": 1922,
     "contentRating": "PG-13",
-    "source": "https://cbsnews.com/eleifend/pede.png",
+    "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
     "tags": [
     "Drama|Romance"
     ]
   },
   {
-    "id": "ce16b2c2-1dd0-4e69-8176-09040f11cc2d",
     "title": "Spanish Earth, The",
     "year": 2012,
     "cover": "http://dummyimage.com/143x154.jpg/dddddd/000000",
     "description": "Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
     "duration": 1987,
     "contentRating": "PG-13",
-    "source": "http://census.gov/volutpat.jsp",
+    "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
     "tags": [
         "Horror",
         "Documentary",
@@ -29,34 +27,31 @@ const moviesMock = [
     ]
   },
   {
-    "id": "0c008a69-b8bb-4c96-97b3-2031ad0fc758",
     "title": "Mean Streets",
     "year": 1996,
     "cover": "http://dummyimage.com/176x226.bmp/dddddd/000000",
     "description": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
     "duration": 1947,
     "contentRating": "PG",
-    "source": "http://auda.org.au/sapien/sapien/non/mi.png",
+    "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
     "tags": [
         "Comedy",
         "Drama"
     ]
   },
   {
-    "id": "38436953-f828-4000-a1e3-5ed36c633ff2",
     "title": "Drop Dead Gorgeous",
     "year": 1968,
     "cover": "http://dummyimage.com/170x206.jpg/cc0000/ffffff",
     "description": "Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
     "duration": 1955,
     "contentRating": "R",
-    "source": "http://prnewswire.com/aliquam/erat.html",
+    "source": "https://mdstrm.com/video/58333e214ad055d208427db5.mp4",
     "tags": [
         "Thriller"
     ]
   },
   {
-    "id": "8ab2f271-5567-4d78-9fed-88ef660451fe",
     "title": "War and Peace (Voyna i mir)",
     "year": 2003,
     "cover": "http://dummyimage.com/240x228.png/ff4444/ffffff",
@@ -78,7 +73,6 @@ const moviesMock = [
     ]
   },
   {
-    "id": "1dc54123-8186-4cb9-adbb-a145e235871d",
     "title": "Thérèse",
     "year": 2009,
     "cover": "http://dummyimage.com/173x237.jpg/cc0000/ffffff",
@@ -100,7 +94,6 @@ const moviesMock = [
     ]
   },
   {
-    "id": "1cdb6171-8d12-4aea-bd86-c181d6e8cc42",
     "title": "Hunky Dory",
     "year": 2012,
     "cover": "http://dummyimage.com/205x226.bmp/5fa2dd/ffffff",
@@ -122,7 +115,6 @@ const moviesMock = [
     ]
   },
   {
-    "id": "4c1c536a-f323-4feb-80c1-ca93b896ae70",
     "title": "Five Easy Pieces",
     "year": 1997,
     "cover": "http://dummyimage.com/153x246.png/cc0000/ffffff",
@@ -139,7 +131,6 @@ const moviesMock = [
     ]
   },
   {
-    "id": "a8c6c9fc-0107-494f-83ad-9ceadb11dc35",
     "title": "Other, The",
     "year": 1994,
     "cover": "http://dummyimage.com/242x134.jpg/ff4444/ffffff",
@@ -155,7 +146,6 @@ const moviesMock = [
     ]
   },
   {
-    "id": "5d448927-7d8e-49a7-a3bc-280938a05581",
     "title": "Todos eran culpables",
     "year": 1995,
     "cover": "http://dummyimage.com/167x148.jpg/ff4444/ffffff",
