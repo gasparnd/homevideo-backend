@@ -8,6 +8,10 @@ const { config } = require('./config/index')
 
 const app = express()
 
+// time in seconds
+const THIRTY_DAYS_IN_SEC = 2592000;
+const TWO_HOURS_IN_SEC = 7200;
+
 // body parser
 app.use(express.json())
 app.use(cookieParser())
@@ -16,10 +20,12 @@ app.use(cookieParser())
 require('./utils/auth/strategies/basic')
 
 app.post('/auth/sign-in', async (req, res, next) => {
+	const { rememberMe } = req.body;
+
 	passport.authenticate('basic', (error, data) => {
 		try {
 			if(error || !data) {
-				next(boom.unauthorized('Es aca'))
+				next(boom.unauthorized())
 			}
 
 			req.login(data, { session: false }, async error => {
@@ -31,7 +37,8 @@ app.post('/auth/sign-in', async (req, res, next) => {
 
 				res.cookie("token", token, {
 					httpOnly: !config.dev,
-					secure: !config.dev
+					secure: !config.dev,
+					maxAge: rememberMe ? THIRTY_DAYS_IN_SEC : TWO_HOURS_IN_SEC
 				})
 
 				res.status(200).json(user)
