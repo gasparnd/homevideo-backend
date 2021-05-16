@@ -1,6 +1,7 @@
 const express = require('express')
 const passport = require('passport')
 const boom = require('@hapi/boom')
+const joi = require('@hapi/joi')
 const jwt = require('jsonwebtoken')
 const ApiKeysService = require('../services/apiKeys')
 const UsersService = require('../services/users')
@@ -71,7 +72,7 @@ const authApi = app => {
 		})(req, res, next)
 	})
 
-	router.post('/sign-up', validationHandler(createUserSchema), async (req, res, next) => {
+	router.post('/sign-up', validationHandler(joi.object(createUserSchema)), async (req, res, next) => {
 		const { body: user } = req
 
 		try {
