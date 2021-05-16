@@ -19,6 +19,9 @@ app.use(cookieParser())
 // Basic Strategy
 require('./utils/auth/strategies/basic')
 
+// OAuth Strategy
+require('./utils/auth/strategies/oauth')
+
 app.post('/auth/sign-in', async (req, res, next) => {
 	const { rememberMe } = req.body;
 
@@ -117,66 +120,27 @@ app.delete('/user-movies/:userMovieId', async (req, res, next) => {
 	}
 })
 
-/*app.post('/user-movies', async function (req, res, next) {
-  try {
-    const { body: userMovie } = req;
-    const { token } = req.cookies
+app.get('/auth/google-oauth', passport.authenticate('google-oauth', {
+	scope: ['email', 'profile', 'openid']
+}))
 
-    // cuando hacemos sign-in generamos un JWT que lo guardamos en una [cookie](https://es.wikipedia.org/wiki/Cookie_(inform%C3%A1tica)),
-    // apartir de ahí los req que hagamos en las peliculas de usuarios, entonces
-    // van ha tener la [cookie](https://es.wikipedia.org/wiki/Cookie_(inform%C3%A1tica)) en el req. Es por eso que podemos sacar de las [cookie](https://es.wikipedia.org/wiki/Cookie_(inform%C3%A1tica))s el token
-    // para llamar a nuestra API
+app.get('/auth/google-oauth/callback', 
+	passport.authenticate('google-oauth', { session: false }),
+	(req, res, next) => {
+		if(!req.user) {
+			next(boom.unauthorized())
+		}
 
-    const { data, status } = await axios({
-      url: `${config.apiUrl}/api/user-movies`,
-      headers: { Authorization: `Bearer ${token}` },
-      method: 'post',
-      data: userMovie
-    });
+		const { token, ...user } = req.user
 
-    if(status === 500) {
-    	return console.log('Si es el 500 ')
-    }
+		res.cookie('token', token, {
+			httpOnly: !config.dev,
+			secure: !config.dev
+		})
 
-    if (status !== 201) {
-      return next(boom.badImplementation('Que pingo hago lpm'));
-    }
-
-    res.status(201).json(data);
-    
-    
-  } catch (error) {
-    next(error);
-  }
-});
-
-app.delete("/user-movies/:userMovieId", async function (req, res, next) {
-  try {
-  	const { userMovieId } = req.params;
-    const { token } = req.cookies
-
-    // cuando hacemos sign-in generamos un JWT que lo guardamos en una [cookie](https://es.wikipedia.org/wiki/Cookie_(inform%C3%A1tica)),
-    // apartir de ahí los req que hagamos en las peliculas de usuarios, entonces
-    // van ha tener la [cookie](https://es.wikipedia.org/wiki/Cookie_(inform%C3%A1tica)) en el req. Es por eso que podemos sacar de las [cookie](https://es.wikipedia.org/wiki/Cookie_(inform%C3%A1tica))s el token
-    // para llamar a nuestra API
-
-    const { data, status } = await axios({
-      url: `${config.apiUrl}/api/user-movies/${userMovieId}`,
-      headers: { Authorization: `Bearer ${token}` },
-      method: 'DELETE'
-    });
-
-    if (status !== 200) {
-      return next(boom.badImplementation());
-    }
-
-    res.status(200).json(data);
-    
-    
-  } catch (error) {
-    next(error);
-  }
-});*/
+		res.status(200).json(user)
+	}
+)
 
 app.listen(config.port, () => {
 	console.log(`Listening in http://localhost:${config.port}`)
