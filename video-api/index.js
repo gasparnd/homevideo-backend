@@ -1,5 +1,4 @@
 const express = require('express')
-
 const app = express()
 
 const { config } = require('./config/index.js')
